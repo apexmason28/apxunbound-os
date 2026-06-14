@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils/formatters"
 import { SignOutButton } from "@/components/dashboard/sign-out-button"
 import {
   LayoutDashboard, Camera, BarChart3, GitMerge,
-  Activity, FileText, Utensils, Settings,
+  Activity, FileText, Utensils, Mail,
 } from "lucide-react"
 
 const NAV = [
@@ -17,6 +17,7 @@ const NAV = [
   { label: "Business Health", href: "/health",     icon: Activity },
   { label: "Content OS",      href: "/content",    icon: FileText },
   { label: "Dinner Events",   href: "/dinners",    icon: Utensils },
+  { label: "Email Marketing", href: "/email",      icon: Mail },
 ]
 
 export function Sidebar() {

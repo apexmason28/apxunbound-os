@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { Camera, BarChart3, GitMerge, Activity, FileText, Utensils, ArrowUpRight, Zap, TrendingUp, Users, AlertTriangle, CheckCircle2, Circle } from "lucide-react"
+import { Camera, BarChart3, GitMerge, Activity, FileText, Utensils, Mail, ArrowUpRight, Zap, TrendingUp, Users, AlertTriangle, CheckCircle2, Circle } from "lucide-react"
 import { Sparkline } from "@/components/ui/sparkline"
 import { Greeting } from "@/components/dashboard/greeting"
 
@@ -75,6 +75,17 @@ const MODULES = [
     accent: "#6366f1", badge: "bg-indigo-500/10 text-indigo-400",
     sub: ["Events", "Applications"],
     stat: "—", statLabel: "upcoming dinners",
+    span: "lg:col-span-1",
+  },
+  {
+    label: "Email Marketing",
+    href: "/email",
+    icon: Mail,
+    desc: "Instantly integration · 30–40 broadcasts/month · Autoresponder sequences · Deliverability tracking",
+    gb: "gb-indigo", glow: "glow-indigo",
+    accent: "#818cf8", badge: "bg-indigo-400/10 text-indigo-300",
+    sub: ["Campaigns", "Sequences", "Broadcasts"],
+    stat: "—", statLabel: "open rate",
     span: "lg:col-span-2",
   },
 ]
