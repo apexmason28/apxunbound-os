@@ -1,6 +1,6 @@
 import Link from "next/link"
 import {
-  Instagram, BarChart3, GitMerge, Activity, FileText, Utensils,
+  Camera, BarChart3, GitMerge, Activity, FileText, Utensils,
   ArrowUpRight, Zap, TrendingUp, Users, DollarSign,
 } from "lucide-react"
 
@@ -8,7 +8,7 @@ const MODULES = [
   {
     label: "Instagram Growth OS",
     href: "/instagram",
-    icon: Instagram,
+    icon: Camera,
     description: "Analytics · Account health · Content engine · Competitor tracking",
     gradient: "from-purple-600/20 to-pink-600/10",
     border: "rgba(168,85,247,0.2)",

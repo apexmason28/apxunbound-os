@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils/formatters"
 import { SignOutButton } from "@/components/dashboard/sign-out-button"
 import {
   LayoutDashboard,
-  Instagram,
+  Camera,
   BarChart3,
   GitMerge,
   Activity,
@@ -17,7 +17,7 @@ import {
 
 const NAV = [
   { label: "Overview",        href: "/",         icon: LayoutDashboard },
-  { label: "Instagram",       href: "/instagram", icon: Instagram },
+  { label: "Instagram",       href: "/instagram", icon: Camera },
   { label: "Meta Ads",        href: "/ads",       icon: BarChart3 },
   { label: "Pipeline",        href: "/pipeline",  icon: GitMerge },
   { label: "Business Health", href: "/health",    icon: Activity },
