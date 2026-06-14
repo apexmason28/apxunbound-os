@@ -2,7 +2,7 @@ export default function DinnersPage() {
   return (
     <div className="space-y-6">
       <h2 className="text-2xl font-bold text-white">Founder Dinner Manager</h2>
-      <p className="text-zinc-500 text-sm">$2,500–$3,500/ticket · 10–12 guests · LA-based</p>
+      <p className="text-zinc-500 text-sm">$1,200/seat · 10–12 guests · LA-based</p>
       <div className="grid grid-cols-1 gap-4 md:grid-cols-3 text-sm">
         {[
           { label: "Events", href: "/dinners/events", desc: "Upcoming and past dinners" },
