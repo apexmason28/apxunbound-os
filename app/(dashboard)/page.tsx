@@ -198,9 +198,9 @@ export default function DashboardHome() {
         <h2 className="text-xs font-semibold uppercase tracking-widest text-zinc-500 mb-4">Products</h2>
         <div className="grid grid-cols-2 gap-3 md:grid-cols-4 text-sm">
           {[
-            { label: "Founder Dinners", price: "$2,500–$3,500", detail: "10–12 people · LA" },
+            { label: "Founder Dinners", price: "$1,200/seat", detail: "10–12 people · LA" },
             { label: "DWY Group Course", price: "$2,800", detail: "Group coaching" },
-            { label: "1:1 Coaching", price: "$12k–$20k", detail: "3 months · Ozzie" },
+            { label: "1:1 Coaching", price: "$12k", detail: "4 months · Ozzie" },
             { label: "Skool Community", price: "Free", detail: "Top of funnel" },
           ].map(({ label, price, detail }) => (
             <div key={label} className="rounded-xl border border-white/10 bg-white/[0.03] p-4">
