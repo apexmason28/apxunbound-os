@@ -124,9 +124,9 @@ export default function DashboardHome() {
     <div className="space-y-10">
 
       {/* ── Header ─────────────────────────────────────────────────────────── */}
-      <div className="fade-up flex items-start justify-between gap-6">
+      <div className="fade-up flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3 sm:gap-6">
         <Greeting />
-        <div className="flex items-center gap-2 flex-shrink-0">
+        <div className="flex items-center gap-2 flex-wrap">
           {INTEGRATIONS.map(({ label, status }) => (
             <div
               key={label}

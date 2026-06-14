@@ -1,6 +1,13 @@
+"use client"
+
+import { useCallback, useState } from "react"
+import { Menu } from "lucide-react"
 import { Sidebar } from "@/components/dashboard/sidebar"
 
 export default function DashboardLayout({ children }: { children: React.ReactNode }) {
+  const [sidebarOpen, setSidebarOpen] = useState(false)
+  const closeSidebar = useCallback(() => setSidebarOpen(false), [])
+
   return (
     <div className="flex min-h-screen apx-canvas">
       {/* Ambient orbs */}
@@ -34,10 +41,38 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
         />
       </div>
 
-      <Sidebar />
+      <Sidebar open={sidebarOpen} onClose={closeSidebar} />
 
-      <main className="relative z-10 ml-64 flex-1 min-h-screen overflow-y-auto">
-        <div className="px-10 py-10 max-w-[1200px]">
+      <main className="relative z-10 lg:ml-64 flex-1 min-h-screen overflow-y-auto">
+        {/* Mobile top bar */}
+        <div
+          className="lg:hidden sticky top-0 z-30 flex items-center gap-3 px-4 py-3"
+          style={{
+            background: "rgba(6,8,16,0.9)",
+            backdropFilter: "blur(24px)",
+            WebkitBackdropFilter: "blur(24px)",
+            borderBottom: "1px solid rgba(255,255,255,0.055)",
+          }}
+        >
+          <button
+            onClick={() => setSidebarOpen(true)}
+            className="text-zinc-400 hover:text-white transition-colors"
+            aria-label="Open menu"
+          >
+            <Menu size={18} />
+          </button>
+          <div className="flex items-center gap-2">
+            <div
+              className="h-6 w-6 rounded-lg flex items-center justify-center text-[11px] font-black text-white"
+              style={{ background: "linear-gradient(135deg, #6366f1 0%, #a78bfa 100%)" }}
+            >
+              A
+            </div>
+            <span className="text-sm font-semibold text-white tracking-tight">Business OS</span>
+          </div>
+        </div>
+
+        <div className="px-4 py-6 lg:px-10 lg:py-10 max-w-[1200px]">
           {children}
         </div>
       </main>
