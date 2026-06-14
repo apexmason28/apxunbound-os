@@ -266,46 +266,6 @@ export default function DashboardHome() {
         </section>
       </div>
 
-      {/* ── Funnel structure ───────────────────────────────────────────────── */}
-      <section className="fade-up fade-up-4 space-y-3">
-        <p className="text-[10px] font-bold tracking-[0.16em] uppercase text-zinc-700">Funnel Structure</p>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-          {[
-            {
-              label: "Standard Funnel",
-              steps: ["Ad", "Application", "Setter Qualifies", "Book Call", "Donnie Closes", "Onboard"],
-              note: null,
-            },
-            {
-              label: "High-Ticket VSL",
-              steps: ["Ad", "VSL Page", "Book Call", "Thank You"],
-              note: "No optin. Straight to book.",
-            },
-          ].map(({ label, steps, note }) => (
-            <div
-              key={label}
-              className="rounded-2xl px-5 py-4"
-              style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)" }}
-            >
-              <p className="text-[10px] font-bold tracking-[0.14em] uppercase text-zinc-700 mb-3">{label}</p>
-              <div className="flex items-center gap-2 flex-wrap">
-                {steps.map((step, i) => (
-                  <span key={step} className="flex items-center gap-2">
-                    <span
-                      className="text-xs font-medium px-2.5 py-1 rounded-lg"
-                      style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", color: "rgba(255,255,255,0.7)" }}
-                    >
-                      {step}
-                    </span>
-                    {i < steps.length - 1 && <span className="text-[10px] text-zinc-800">→</span>}
-                  </span>
-                ))}
-              </div>
-              {note && <p className="text-[11px] text-zinc-700 mt-2.5">{note}</p>}
-            </div>
-          ))}
-        </div>
-      </section>
 
     </div>
   )
