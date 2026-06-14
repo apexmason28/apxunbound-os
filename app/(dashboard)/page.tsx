@@ -19,7 +19,7 @@ const MODULES = [
     label: "Meta Ads Manager",
     href: "/ads",
     icon: "◈",
-    description: "Live campaign monitor · KPI alerts with auto-kill thresholds · Claude creative engine",
+    description: "Live campaign monitor · KPI alerts with flag thresholds · Claude creative engine",
     color: "from-blue-500/10 to-cyan-500/10 border-blue-500/20",
     accent: "text-blue-400",
     sub: [
@@ -76,15 +76,15 @@ const MODULES = [
 ]
 
 const KPI_THRESHOLDS = [
-  { label: "CPM", range: "$30–90", kill: "3× after 6h" },
-  { label: "CTR", range: "1–3%", kill: "—" },
-  { label: "CPC", range: "$2–5", kill: "—" },
-  { label: "CPL", range: "$30–60", kill: "2×" },
-  { label: "CPBC", range: "$100–250", kill: "2×" },
-  { label: "Show Rate", range: "50%+", kill: "—" },
-  { label: "Close Rate", range: "25%+", kill: "—" },
-  { label: "Cash ROAS", range: "2:1 min", kill: "—" },
-  { label: "Rev ROAS", range: "5:1 min", kill: "—" },
+  { label: "CPM", range: "$30–90", flag: "3× after 6h" },
+  { label: "CTR", range: "1–3%", flag: "—" },
+  { label: "CPC", range: "$2–5", flag: "—" },
+  { label: "CPL", range: "$30–60", flag: "2×" },
+  { label: "CPBC", range: "$100–250", flag: "2×" },
+  { label: "Show Rate", range: "50%+", flag: "—" },
+  { label: "Close Rate", range: "25%+", flag: "—" },
+  { label: "Cash ROAS", range: "2:1 min", flag: "—" },
+  { label: "Rev ROAS", range: "5:1 min", flag: "—" },
 ]
 
 export default function DashboardHome() {
@@ -141,7 +141,7 @@ export default function DashboardHome() {
               <tr className="border-b border-white/10">
                 <th className="px-4 py-3 text-left text-xs font-semibold text-zinc-500 uppercase tracking-wider">Metric</th>
                 <th className="px-4 py-3 text-left text-xs font-semibold text-zinc-500 uppercase tracking-wider">Healthy Range</th>
-                <th className="px-4 py-3 text-left text-xs font-semibold text-zinc-500 uppercase tracking-wider">Kill Trigger</th>
+                <th className="px-4 py-3 text-left text-xs font-semibold text-zinc-500 uppercase tracking-wider">Flag Trigger</th>
               </tr>
             </thead>
             <tbody>
@@ -150,10 +150,10 @@ export default function DashboardHome() {
                   <td className="px-4 py-2.5 font-medium text-white">{kpi.label}</td>
                   <td className="px-4 py-2.5 text-emerald-400">{kpi.range}</td>
                   <td className="px-4 py-2.5 text-zinc-500">
-                    {kpi.kill === "—" ? (
+                    {kpi.flag === "—" ? (
                       <span className="text-zinc-700">—</span>
                     ) : (
-                      <span className="text-red-400">{kpi.kill}</span>
+                      <span className="text-red-400">{kpi.flag}</span>
                     )}
                   </td>
                 </tr>
