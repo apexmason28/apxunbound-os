@@ -1,13 +1,15 @@
 import { Badge } from "@/components/ui/badge"
+import { Button } from "@/components/ui/button"
 import { formatCurrency, formatPercent } from "@/lib/utils/formatters"
 import { evaluateKPI } from "@/lib/meta/kpi-thresholds"
 import { type AdMetrics } from "@/types"
 
 interface CampaignRowProps {
   metrics: AdMetrics
+  onPause?: (id: string) => void
 }
 
-export function CampaignRow({ metrics }: CampaignRowProps) {
+export function CampaignRow({ metrics, onPause }: CampaignRowProps) {
   const cpmStatus = evaluateKPI("cpm", metrics.cpm, metrics.hoursRunning)
   const ctrStatus = evaluateKPI("ctr", metrics.ctr * 100)
   const cplStatus = metrics.cpl ? evaluateKPI("cpl", metrics.cpl) : undefined
@@ -38,9 +40,14 @@ export function CampaignRow({ metrics }: CampaignRowProps) {
         )}
       </td>
       <td className="px-4 py-3">
-        <Badge variant={worstStatus}>
-          {worstStatus === "kill" ? "FLAGGED" : worstStatus.toUpperCase()}
-        </Badge>
+        <Badge variant={worstStatus}>{worstStatus.toUpperCase()}</Badge>
+      </td>
+      <td className="px-4 py-3">
+        {worstStatus === "kill" && onPause && (
+          <Button variant="danger" size="sm" onClick={() => onPause(metrics.campaignId)}>
+            Kill
+          </Button>
+        )}
       </td>
     </tr>
   )
