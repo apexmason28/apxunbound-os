@@ -3,6 +3,7 @@
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { cn } from "@/lib/utils/formatters"
+import { SignOutButton } from "@/components/dashboard/sign-out-button"
 
 const NAV = [
   { label: "Overview", href: "/", icon: "▦" },
@@ -42,8 +43,8 @@ export function Sidebar() {
         ))}
       </nav>
 
-      <div className="px-6 py-4 border-t border-white/10">
-        <p className="text-xs text-zinc-600">Ozzie · Mason · Donnie</p>
+      <div className="px-6 py-4 border-t border-white/10 flex items-center justify-end">
+        <SignOutButton />
       </div>
     </aside>
   )

@@ -95,10 +95,6 @@ export default function DashboardHome() {
       <div className="space-y-1">
         <p className="text-xs font-semibold tracking-widest text-indigo-400 uppercase">APXUnbound LLC</p>
         <h1 className="text-4xl font-bold text-white tracking-tight">Business OS</h1>
-        <p className="text-zinc-500 text-sm mt-2">
-          Ozzie coaches · Mason runs ops · Donnie closes.{" "}
-          <span className="text-zinc-600">High-performance mindset for 6–7 figure operators.</span>
-        </p>
       </div>
 
       {/* Module Grid */}
