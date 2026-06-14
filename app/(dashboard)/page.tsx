@@ -96,7 +96,7 @@ const KPIs = [
 const PRODUCTS = [
   { label: "Founder Dinners",  price: "$1,200",   unit: "/seat",    icon: Utensils,   color: "#6366f1" },
   { label: "DWY Group Course", price: "$2,800",   unit: "",         icon: Users,      color: "#a855f7" },
-  { label: "1:1 Coaching",     price: "$12,000",  unit: "/4 mo",    icon: TrendingUp, color: "#10b981" },
+  { label: "1:1 Coaching",     price: "$12k",     unit: "/3 mo",    icon: TrendingUp, color: "#10b981" },
   { label: "Skool Community",  price: "Free",     unit: "",         icon: Zap,        color: "#f59e0b" },
 ]
 
