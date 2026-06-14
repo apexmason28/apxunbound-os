@@ -6,32 +6,47 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 const variants = {
-  primary: "bg-indigo-600 hover:bg-indigo-500 text-white",
-  secondary: "bg-white/10 hover:bg-white/15 text-white border border-white/20",
-  ghost: "hover:bg-white/10 text-zinc-400 hover:text-white",
-  danger: "bg-red-600 hover:bg-red-500 text-white",
+  primary: {
+    className: "text-white font-semibold",
+    style: { background: "linear-gradient(135deg, #6366f1, #8b5cf6)", boxShadow: "0 0 20px -4px rgba(99,102,241,0.5)" },
+  },
+  secondary: {
+    className: "text-zinc-200 font-medium hover:text-white",
+    style: { background: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.1)" },
+  },
+  ghost: {
+    className: "text-zinc-500 hover:text-zinc-200 hover:bg-white/5",
+    style: {},
+  },
+  danger: {
+    className: "text-white font-semibold",
+    style: { background: "linear-gradient(135deg, #ef4444, #dc2626)", boxShadow: "0 0 20px -4px rgba(239,68,68,0.4)" },
+  },
 }
 
 const sizes = {
-  sm: "px-3 py-1.5 text-xs",
-  md: "px-4 py-2 text-sm",
-  lg: "px-6 py-3 text-base",
+  sm: "px-3 py-1.5 text-xs rounded-lg gap-1.5",
+  md: "px-4 py-2 text-sm rounded-lg gap-2",
+  lg: "px-6 py-3 text-sm rounded-xl gap-2",
 }
 
 export function Button({
   className,
   variant = "primary",
   size = "md",
+  style,
   ...props
 }: ButtonProps) {
+  const v = variants[variant]
   return (
     <button
       className={cn(
-        "inline-flex items-center gap-2 rounded-lg font-medium transition-colors disabled:opacity-50",
-        variants[variant],
+        "inline-flex items-center transition-all duration-150 disabled:opacity-40 disabled:cursor-not-allowed active:scale-[0.97]",
+        v.className,
         sizes[size],
         className
       )}
+      style={{ ...v.style, ...style }}
       {...props}
     />
   )
