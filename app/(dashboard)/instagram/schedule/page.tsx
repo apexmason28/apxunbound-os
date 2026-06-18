@@ -1,4 +1,4 @@
-// TODO: pull content_pieces with status=scheduled, display calendar, allow publish via Composio
+// TODO: pull content_pieces with status=scheduled, display calendar, allow publish via /api/instagram/schedule
 export default function SchedulePage() {
   return (
     <div className="space-y-6">
