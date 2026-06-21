@@ -1,5 +1,5 @@
 // Instagram Graph API — direct (no proxy)
-const IG_BASE = "https://graph.facebook.com/v21.0"
+const IG_BASE = "https://graph.facebook.com/v24.0"
 const ACCOUNT_ID = process.env.INSTAGRAM_BUSINESS_ACCOUNT_ID!
 const ACCESS_TOKEN = process.env.INSTAGRAM_ACCESS_TOKEN!
 

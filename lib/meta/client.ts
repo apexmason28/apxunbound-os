@@ -1,4 +1,4 @@
-const META_BASE = "https://graph.facebook.com/v21.0"
+const META_BASE = "https://graph.facebook.com/v24.0"
 const AD_ACCOUNT_ID = process.env.META_AD_ACCOUNT_ID!
 const ACCESS_TOKEN = process.env.META_ACCESS_TOKEN!
 
