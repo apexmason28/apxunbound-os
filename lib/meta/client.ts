@@ -6,6 +6,7 @@ const CAMPAIGN_FIELDS = [
   "id",
   "name",
   "status",
+  "start_time",
   "daily_budget",
   "lifetime_budget",
   "insights.fields(spend,impressions,clicks,cpm,ctr,cpc,actions,cost_per_action_type)",

@@ -7,9 +7,10 @@ import { type AdMetrics } from "@/types"
 interface CampaignRowProps {
   metrics: AdMetrics
   onPause?: (id: string) => void
+  pausing?: boolean
 }
 
-export function CampaignRow({ metrics, onPause }: CampaignRowProps) {
+export function CampaignRow({ metrics, onPause, pausing = false }: CampaignRowProps) {
   const cpmStatus = evaluateKPI("cpm", metrics.cpm, metrics.hoursRunning)
   const ctrStatus = evaluateKPI("ctr", metrics.ctr * 100)
   const cplStatus = metrics.cpl ? evaluateKPI("cpl", metrics.cpl) : undefined
@@ -44,8 +45,13 @@ export function CampaignRow({ metrics, onPause }: CampaignRowProps) {
       </td>
       <td className="px-4 py-3">
         {worstStatus === "kill" && onPause && (
-          <Button variant="danger" size="sm" onClick={() => onPause(metrics.campaignId)}>
-            Kill
+          <Button
+            variant="danger"
+            size="sm"
+            disabled={pausing}
+            onClick={() => onPause(metrics.campaignId)}
+          >
+            {pausing ? "Pausing…" : "Kill"}
           </Button>
         )}
       </td>
